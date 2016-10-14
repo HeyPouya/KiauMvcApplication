@@ -1,0 +1,124 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ریز محصولات</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="../../content/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="../../content/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <!--webfont-->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="../../content/js/jquery-1.11.1.min.js"></script>
+    <!-- dropdown -->
+    <script src="../../content/js/jquery.easydropdown.js"></script>
+    <!-- start menu -->
+    <link href="../../content/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../../content/js/megamenu.js"></script>
+    <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
+</head>
+<body>
+    <div class="header_top">
+        <div class="container">
+            <div class="header_top-box">
+                <div class="cssmenu">
+                    <ul>
+                        <li class="active"><a href="#">خوش آمدید</a></li>
+                        <li><a href="#">سبد خرید</a></li>
+                        <li><a href="Login">ورود</a></li>
+                        <li><a href="Register">ثبت نام</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="header_bottom">
+        <div class="container">
+            <div class="header_bottom-box">
+                <div class="header_bottom_left">
+                    <div class="logo">
+                        <a href="index.html"><img src="~/Content/images/logo3.png" alt="" /></a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                @using (Html.BeginForm("search", "Home"))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    <div class="header_bottom_right">
+                        <div class="search">
+                            <input type="text" id="search" name="search" placeholder="نام محصول را وارد نمایید">
+                            <button type="submit" id="search"></button>
+                        </div>
+                        <ul class="bag">
+                            <a href="#"><i class="bag_left"> </i></a>
+                            <a href="#"><li style="text-align:center" class="bag_right"><p>(0)</p> </li></a>
+                            <div class="clearfix"> </div>
+                        </ul>
+                    </div>
+                }
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+            <div class="menu_box">
+                <ul class="megamenu skyblue">
+                    <li class="active grid">
+                        @Html.ActionLink("خانه", "Index", new { @class = "color2" })
+                        @*<a class="color2" href="Index">خانه</a>*@
+                    </li>
+                    <li><a class="color4" href="News">اخبار</a></li>
+                    <li>
+                        <a class="color10" href="Product">پایان نامه </a>
+
+                    </li>
+                    <li><a class="color3" href="About">درباره ما</a></li>
+
+                    <li><a class="color8" href="Contact">تماس با ما</a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="men">
+
+        @foreach (var item in ViewBag.NewsDescript)
+        {
+
+            <div class="container">
+                <div class="pages">
+                    <img style="width:100%;height:auto;" src="@item.NewsPhotoUrl" class="img-responsive" alt="" />
+                    <p style="text-align:20px;" class="m_10"> @item.NewsTitle</p>
+                    <p class="m_11">
+                        @item.NewsContent
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="footer">
+        <div class="container">
+            <ul class="footer_nav">
+                <li><a href="#">تماس با ما</a></li>
+                <li><a href="#">درباره ما</a></li>
+                <li><a href="#">فروشگاه</a></li>
+                <li><a href="#">اخبار</a></li>
+                <li><a href="#">خانه</a></li>
+            </ul>
+            <p class="copy">طراحی و برنامه نویسی  <a href="http://omid_sg.ir" target="_blank"> امید سلیمان</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@model KiauMvcApplication.Models.ProductGroupTb
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>حذف گروه محصولی</title>
+    <link href="~/Content/css/cms.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>آیا اطمینان دارید؟</h3>
+    <fieldset>
+        <legend>جزییات گروه محصولی</legend>
+
+        <div class="display-label">
+            <span>تیتر گروه محصولی:</span>
+        </div>
+        <br />
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ProductGroupTitle)
+        </div>
+        <br />
+        @ViewBag.Message
+        <br />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <p>
+                <input type="submit" value="حذف" /> |
+                @Html.ActionLink("بازگشت به پنل مدیریت", "Panel")
+            </p>
+        }
+    </fieldset>
+</body>
+</html>

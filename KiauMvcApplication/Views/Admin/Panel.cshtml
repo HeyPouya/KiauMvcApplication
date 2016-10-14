@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>پنل مدیریت || امید سلیمان</title>
+    <link href="../../Content/css/StyleSheet.css" type="text/css" rel="Stylesheet" />
+    <script type="text/javascript" src="../../Content/js/jquery-Slide2.js"></script>
+    <script type="text/javascript" src="../../Content/js/jquery-Slide1.js"></script>
+</head>
+<body>
+    <div id="header">
+        <h1 style=" text-align: center; font-weight:bold;"> Admin Panel : omid_sg.ir</h1>
+        <h4 style=" text-align: center; font-weight:bold;">Developed by Omid Soleiman Garmabaki for KIAU Project</h4>
+        <h4 style=" text-align: center; font-weight:bold;">Copy Write 2014-2015 Reserved from Omid Soleiman</h4>
+    </div>
+    <div id="Dashboard" align="center">
+        <table class="Menu" cellpadding="2" cellspacing="2">
+            <tr><td colspan="6"><div class="titlediv">ارسال محتوا</div></td></tr>
+            <tr>
+                <td>
+                    <a href="#">
+                        <img src="../../Content/icon/picture.png" /><br /><p>
+                            @Html.ActionLink(" اسلاید شو", "Slideshow")
+                        </p>
+                    </a>
+                </td>
+                <td><a href="#"><img src="../../Content/icon/users.png" /><br /><p>@Html.ActionLink("اخبار", "News")</p></a></td>
+                <td><a href="#"><img src="../../Content/icon/postcard.png" /><br /><p>@Html.ActionLink("محصولات", "Product")</p></a></td>
+                <td>
+                    <a href="#">
+                        <img src="../../Content/icon/tools.png" /><br /><p>
+                            @Html.ActionLink("گروه محصولی", "ProductGroup")
+                        </p>
+                    </a>
+                </td>
+                @*<td>
+                    <a href="#">
+                        <img src="../../Content/icon/chart.png" /><br /><p>
+                            @Html.ActionLink("پکیج های ما", "Package")
+                        </p>
+                    </a>
+                </td>*@
+                @*<td>
+                    <a href="#">
+                        <img src="../../Content/icon/favorite.png" /><br /><p>
+                            @Html.ActionLink("پروژه های در حال اجرا", "RemainPrg")
+                        </p>
+                    </a>
+                </td>*@
+            </tr>
+            <tr><td colspan="6" class=""><div class="titlediv"> مدیریت محتوا</div></td></tr>
+            <tr>
+                <td><a href="#"><img src="../../Content/icon/picture.png" /><br /><p>@Html.ActionLink("اسلاید شو", "SlideDetails")</p></a></td>
+                <td><a href="#"><img src="../../Content/icon/users.png" /><br /><p>@Html.ActionLink("اخبار", "Newslist")</p></a></td>
+                <td><a href="#"><img src="../../Content/icon/postcard.png" /><br /><p>@Html.ActionLink("محصولات", "ProductDetails")</p></a></td>
+                <td><a href="#"><img src="../../Content/icon/tools.png" /><br /><p>@Html.ActionLink("گروه محصولی", "ProductGroupList")</p></a></td>
+                @*<td><a href="#"><img src="../../Content/icon/chart.png" /><br /><p>@Html.ActionLink("پکیج های ما", "PackageDetails")</p></a></td>
+                <td><a href="#"><img src="../../Content/icon/favorite.png" /><br /><p>@Html.ActionLink("پروژه های در حال اجرا", "RemainPrgDetails")</p></a></td>*@
+            </tr>
+            <tr><td colspan="6" class=""><div class="titlediv">ابزار</div></td></tr>
+            <tr>
+                <td><a href="#"><img src="../../Content/icon/unlock.png" /><br /><p>@Html.ActionLink("تغییر رمز عبور", "ChangePassword")</p></a></td>
+              
+                <td><a href="#"><img src="../../Content/icon/mail.png" /><br /><p>@Html.ActionLink("درخواست یا سفارشات کاریران", "Index")</p></a></td>
+                <td><a href="#"><img src="../../Content/icon/users.png" /><br /><p>@Html.ActionLink("افزودن ادمین", "Addadmin")</p></a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

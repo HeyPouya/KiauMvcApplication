@@ -1,0 +1,43 @@
+﻿@using System.Activities.Expressions
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>لیست نمونه کار ها</title>
+    <link href="~/Content/css/cms.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="DetailsContainer">
+        <div class="DetailsMainTitle">
+            <h3> لیست نمونه کار ها </h3>
+        </div>
+        @foreach (var item in ViewBag.ProductDetails)
+        {
+
+            <div class="part">
+                <div class="Dtitle">
+                    @item.ProductTitle
+                </div>
+                <div class="DContent">
+
+                    <img src="@item.ProductPhotoUrl" />
+                </div>
+                <div id="Delbutton" class="DButton">
+                    @Html.ActionLink("حذف", "DelProduct", new { id = @item.ProductId })
+                    |
+                    @Html.ActionLink("ویرایش", "EditProduct", new { id = @item.ProductId })
+                </div>
+            </div>
+
+        }
+        <div class="DetailsExit">
+            @Html.ActionLink("بازگشت به پنل مدیریت", "Panel")
+        </div>
+    </div>
+</body>
+</html>

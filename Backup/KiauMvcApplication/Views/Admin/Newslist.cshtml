@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>لیست اخبار </title>
+    <link href="~/Content/css/cms.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="DetailsContainer">
+        <div class="DetailsMainTitle">
+            <h3>لیست اخبار</h3>
+        </div>
+        @foreach (var item in ViewBag.NewsList)
+        {
+
+            <div class="part">
+                <div class="Dtitle">
+                    @item.NewsTitle
+                </div>
+                <div class="DContent">
+                    <img src="@item.NewsPhotoUrl" />
+                </div>
+                <div id="Delbutton" class="DButton">
+                    @Html.ActionLink("حذف", "DelNews", new { id = @item.NewsId })
+                    |
+                    @Html.ActionLink("ویرایش", "EditNews", new { id = @item.NewsId })
+                </div>
+            </div>
+        }
+        <div class="DetailsExit">
+            @Html.ActionLink("بازگشت به پنل مدیریت", "Panel")
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+﻿@font-face {
+    font-family: 'farsroid';
+    src: url('../../content/fonts/farsroid.eot?#') format('eot'), /* IE6–8 */
+    url('../../content/fonts/farsroid.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../../content/fonts/farsroid.ttf') format('truetype'); /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+body {
+    font-family: 'farsroid';
+    font-size: 12pt;
+    direction: rtl;
+    background: #e5e6e6 url(.../images/main.gif);
+}
+
+#All {
+    width: 1150px;
+}
+
+#header {
+    height: 60px;
+    vertical-align: middle;
+    font-weight: bold;
+    font-size: 8pt;
+    color: #161616;
+    text-align: right;
+}
+
+.divline {
+    background-image: url(../images/line.gif);
+    background-repeat: repeat-x;
+    height: 2px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#Menumaster {
+    height: 0px;
+    width: 950px;
+    margin-top: 0px;
+    vertical-align: middle;
+    background: #b8b8b8;
+}
+
+.mastermenu {
+    display: inline;
+    padding-left: 15px;
+}
+
+#contents {
+    width: 1150px;
+    vertical-align: top;
+    margin-top: -10px;
+}
+
+a {
+    color: #1f1f1f;
+    text-decoration: none;
+    font-family: 'B koodak';
+    font-size: 12pt;
+}
+
+    a:hover {
+        color: #e9c001;
+        text-decoration: none;
+    }
+
+/*-------------------------
+Right Menu Css
+-----------------------------*/
+
+#R {
+    width: 200px;
+    float: right;
+    border: 1px solid #a5a5a5;
+}
+
+#Rmenu {
+    text-align: right;
+    padding-right: 0px;
+}
+
+    #Rmenu .menu {
+        background: url("../../Content/images/VMS.gif") no-repeat scroll 0px bottom transparent;
+        padding: 0px 0px 0px 0px;
+        height: 35px;
+        list-style: none;
+        direction: rtl;
+        width: 200px;
+        float: right;
+    }
+
+        #Rmenu .menu:hover {
+            background: url("../images/VMenu-Sel.jpg") no-repeat;
+            color: #e9c001;
+        }
+
+    #Rmenu .Submenu {
+        background: url("../images/VMS.gif") no-repeat scroll 0px bottom transparent;
+        background-color: #f1f2f2;
+        padding: 0px 0px 0px 0px;
+        height: 35px;
+        list-style: none;
+        direction: rtl;
+        width: 200px;
+        float: right;
+    }
+
+        #Rmenu .Submenu:hover {
+            background: url("../images/VMenu-Sel.jpg") no-repeat;
+            color: #e9c001;
+        }
+
+
+    #Rmenu .menuA {
+        padding: 0px 30px 0px 0px;
+    }
+
+        #Rmenu .menuA:hover {
+            padding: 0px 30px 0px 0px;
+        }
+
+    #Rmenu .menuB {
+        padding: 0px 50px 0px 0px;
+        color: #067380;
+    }
+
+        #Rmenu .menuB:hover {
+            padding: 0px 50px 0px 0px;
+            color: #e9c001;
+        }
+
+
+.linkimg {
+    background: url('../images/link.png') no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+
+
+#L {
+    width: 940px;
+    float: left;
+    border: 1px solid #a5a5a5;
+    background: #b8b8b8;
+}
+
+#adres {
+    height: 40px;
+    padding: 5px 20px 0 0;
+    width: 95%;
+}
+
+#innerdata {
+    padding: 10px;
+    background: #ffffff;
+}
+
+
+.line {
+    height: 2px;
+    color: Gray;
+    width: 85%;
+    padding: 3px;
+}
+
+
+.blue {
+    background-color: #e4f8ff;
+}
+
+.smoke {
+    background-color: #e7e7e7;
+}
+
+
+#Dashboard {
+    padding: 10px;
+}
+
+    #Dashboard td {
+        padding: 5px;
+        vertical-align: top;
+        text-align: center;
+        width: 120px;
+    }
+
+    #Dashboard img {
+    }
+
+    #Dashboard p {
+        padding-top: 4px;
+    }
+
+    #Dashboard a {
+    }
+
+        #Dashboard a:hover {
+            color: Red;
+        }
+
+    #Dashboard .titlediv {
+        height: 30px;
+        border-bottom: 1px solid #eee;
+        text-indent: 20px;
+        text-align: right;
+        padding-top: 20px;
+        font-family: 'Koodak';
+        font-size: 13pt;
+        color: #0089bc;
+        margin-bottom: 10px;
+    }

@@ -1,0 +1,29 @@
+﻿a:focus {
+	outline: none;
+}
+
+.slide {
+	margin: 0;
+	padding: 0;
+}
+.btn-slide {
+	margin: 0 auto;
+	display: block;
+	 
+}
+.active {
+	background-position: right 12px;
+}
+
+#panel_matlab {	display: none;	background-color:White;}
+#panel_sound {	display: none;	background-color:White;}
+#panel_video {	display: none;	background-color:White;}
+#panel_photo {	display: none;	background-color:White;}
+#panel_amar {	display: none;	background-color:White;}
+#panel_settings {	display: none;	background-color:White;}
+#panel_extra {	display: none;	background-color:White;}
+#panel_file {	display: none;	background-color:White;}
+#panel_learning {	display: none;	background-color:White;}
+#panel_soundU {	display: none;	background-color:White;}
+#panel_videoU {	display: none;	background-color:White;}
+#panel_photoU {	display: none;	background-color:White;}

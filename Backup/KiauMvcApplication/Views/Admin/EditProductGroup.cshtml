@@ -1,0 +1,47 @@
+﻿@model KiauMvcApplication.Models.ProductGroupTb
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ویرایش گروه محصولی</title>
+    <link href="~/Content/css/cms.css" rel="stylesheet" />
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    @using (Html.BeginForm("EditProductGroup", "admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div class="sendbox">
+            <h3>ویرایش گروه محصولی</h3>
+            <p class="lbl">کاربر محترم عکس باید در سایز px 1600*900 باشد</p>
+            <div class="editor-label">
+                <span>تیتر مورد نظر عکس :</span>
+            </div>
+            <br />
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ProductGroupTitle)
+                @Html.ValidationMessageFor(model => model.ProductGroupTitle)
+            </div>
+            <br />
+            <p>
+                <input class="sendsubmit" type="submit" value="ویرایش" />
+            </p>
+            <br />
+            @ViewBag.Message
+            <div class="panelButton">
+                @Html.ActionLink("بازگشت به پنل مدیریت", "Panel")
+            </div>
+        </div>
+    }
+</body>
+</html>

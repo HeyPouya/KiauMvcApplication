@@ -1,0 +1,8 @@
+
+@font-face {
+	font-family: 'B Mitra';
+	src: url('../font/37.eot');
+	src: local('☺'), url('../font/37.woff') format('woff'), url('../font/37.ttf') format('truetype'), url('../font/37.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

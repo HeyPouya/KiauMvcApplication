@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KiauShopDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AboutTb">
+    <Key>
+      <PropertyRef Name="AboutId" />
+    </Key>
+    <Property Name="AboutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AboutTitle" Type="nvarchar" MaxLength="150" />
+    <Property Name="AboutPhotoUrl" Type="nvarchar(max)" />
+    <Property Name="AboutContent" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ContactUsTb">
+    <Key>
+      <PropertyRef Name="CuId" />
+    </Key>
+    <Property Name="CuId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CuFullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CuEmail" Type="nvarchar" MaxLength="250" />
+    <Property Name="CuCelephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="CuContent" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="NewslettersTb">
+    <Key>
+      <PropertyRef Name="NewslettersId" />
+    </Key>
+    <Property Name="NewslettersId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NewslettersEmail" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="NewsTb">
+    <Key>
+      <PropertyRef Name="NewsId" />
+    </Key>
+    <Property Name="NewsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NewsTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewsDescription" Type="nvarchar" MaxLength="250" />
+    <Property Name="NewsContent" Type="nvarchar(max)" />
+    <Property Name="NewsPhotoUrl" Type="nvarchar(max)" />
+    <Property Name="NewsDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductGroupTb">
+    <Key>
+      <PropertyRef Name="ProductGroupId" />
+    </Key>
+    <Property Name="ProductGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductGroupTitle" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="ProductTb">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductGroupIdFK" Type="int" />
+    <Property Name="ProductTitle" Type="nvarchar" MaxLength="250" />
+    <Property Name="ProductContent" Type="nvarchar(max)" />
+    <Property Name="ProductPhotoUrl" Type="nvarchar(max)" />
+    <Property Name="ProductPrice" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProfessorName" Type="nvarchar" MaxLength="50" />
+    <Property Name="StudentName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductFile" Type="nvarchar(max)" />
+    <Property Name="ProductFreeFile" Type="nvarchar(max)" />
+    <Property Name="ProductStatus" Type="bit" />
+    <Property Name="ProductIsSpeciall" Type="bit" />
+  </EntityType>
+  <EntityType Name="SlideShowTb">
+    <Key>
+      <PropertyRef Name="SlideShowId" />
+    </Key>
+    <Property Name="SlideShowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SlideShowTitle" Type="nvarchar(max)" />
+    <Property Name="SlideShowPhotoUrl" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserTb">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserFirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserLastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserStatus" Type="bit" />
+    <Property Name="UserPassword" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="KiauShopDBModelStoreContainer">
+    <EntitySet Name="AboutTb" EntityType="Self.AboutTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContactUsTb" EntityType="Self.ContactUsTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewslettersTb" EntityType="Self.NewslettersTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewsTb" EntityType="Self.NewsTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductGroupTb" EntityType="Self.ProductGroupTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductTb" EntityType="Self.ProductTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SlideShowTb" EntityType="Self.SlideShowTb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTb" EntityType="Self.UserTb" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

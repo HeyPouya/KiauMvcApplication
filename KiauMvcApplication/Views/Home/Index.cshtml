@@ -1,0 +1,433 @@
+﻿@******************************************
+    This Web Application Design And Developed By
+Arash Goodarzi
+    Pouya Heydari
+IT 1 Project
+        *********************@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>KIAU_MVC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="../../Content/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="../../Content/css/style.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="../../Content/css/jquery.countdown.css" />
+    <!-- Custom Theme files -->
+    <!--webfont-->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="../../Content/js/jquery-1.11.1.min.js"></script>
+    <!-- dropdown -->
+    <script src="../../Content/js/jquery.easydropdown.js"></script>
+    <!-- start menu -->
+    <link href="../../Content/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../../Content/js/megamenu.js"></script>
+    <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
+    <script src="../../Content/js/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: true,
+                nav: false,
+                speed: 500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
+    <script src="../../Content/js/jquery.countdown.js"></script>
+    <script src="../../Content/js/script.js"></script>
+</head>
+<body>
+    <div class="header_top">
+        <div class="container">
+            <div class="header_top-box">
+                <div class="cssmenu">
+                    <ul>
+                        <li><a href="#">سبد خرید</a></li>
+                        <li><a href="Home/Login">ورود</a></li>
+                        <li><a href="Home/Register">ثبت نام</a></li>
+                        <li class="active"><a href="#">خوش آمدید</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="header_bottom">
+        <div class="container">
+            <div class="header_bottom-box">
+                <div class="header_bottom_left">
+                    <div class="logo">
+                        <a href="index.html"><img src="~/Content/images/logo3.png" alt="" /></a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                @using (Html.BeginForm("search", "Home"))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    <div class="header_bottom_right">
+                        <div class="search">
+                            <input type="text" id="search" name="search" placeholder="نام محصول را وارد نمایید">
+                            <button type="submit" id="search"></button>
+                        </div>
+                        <ul class="bag">
+                            <a href="#"><i class="bag_left"> </i></a>
+                            <a href="#"><li style="text-align:center" class="bag_right"><p>(0)</p> </li></a>
+                            <div class="clearfix"> </div>
+                        </ul>
+                    </div>
+                }
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+            <div class="menu_box">
+                <ul class="megamenu skyblue">
+                    <li><a class="color1" href="Home/Index">صفحه اصلی</a></li>
+                    <li><a class="color3" href="Home/News">اخبار</a></li>
+                    <li>
+                        <a class="color10" href="Home/Product">پایان نامه </a>
+                        @*<div class="megapanel">
+                                <div class="row">
+                                    <div class="col2">
+                                        <div class="h_nav">
+                                            <h4>فنی و مهندسی</h4>
+                                            <ul>
+                                                <li><a href="men.html">فناوری اطلاعات</a></li>
+                                                <li><a href="men.html">نرم افزار</a></li>
+                                                <li><a href="men.html">مکانیک</a></li>
+                                                <li><a href="men.html">عمران</a></li>
+                                                <li><a href="men.html">معماری</a></li>
+                                                <li><a href="men.html">صنایع</a></li>
+                                                <li><a href="men.html"> مدیریت</a></li>
+                                                <li><a href="men.html">زبان انگلیسی </a></li>
+                                                <li><a href="men.html">حقوق</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <h4>فنی و مهندسی</h4>
+                                            <ul>
+                                                <li><a href="men.html">فناوری اطلاعات</a></li>
+                                                <li><a href="men.html">نرم افزار</a></li>
+                                                <li><a href="men.html">مکانیک</a></li>
+                                                <li><a href="men.html">عمران</a></li>
+                                                <li><a href="men.html">معماری</a></li>
+                                                <li><a href="men.html">صنایع</a></li>
+                                                <li><a href="men.html"> مدیریت</a></li>
+                                                <li><a href="men.html">زبان انگلیسی </a></li>
+                                                <li><a href="men.html">حقوق</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col1">
+                                        <div class="h_nav">
+                                            <h4>حقوق و معارف اسلامی</h4>
+                                            <ul>
+                                                <li><a href="men.html">فناوری اطلاعات</a></li>
+                                                <li><a href="men.html">نرم افزار</a></li>
+                                                <li><a href="men.html">مکانیک</a></li>
+                                                <li><a href="men.html">عمران</a></li>
+                                                <li><a href="men.html">معماری</a></li>
+                                                <li><a href="men.html">صنایع</a></li>
+                                                <li><a href="men.html"> مدیریت</a></li>
+                                                <li><a href="men.html">زبان انگلیسی </a></li>
+                                                <li><a href="men.html">حقوق</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>*@
+                    </li>
+                    <li><a class="color3" href="Home/about">درباره ما</a></li>
+
+                    <li><a class="color8" href="Home/Contact">تماس با ما</a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    @*******************************************************************************************************************************
+        Slide show
+        ****************************************************************************@
+    <div class="index_slider">
+        <div class="container">
+            <div class="callbacks_container">
+                <ul class="rslides" id="slider">
+                    @foreach (var item in ViewBag.slideshow)
+                    {
+                        <li><img src="@item.SlideShowPhotoUrl" class="img-responsive" alt="" /></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content_top">
+        <div class="container">
+            <div class="grid_1">
+                <div class="col-md-3">
+                    <div class="box2">
+                        <ul class="list1">
+                            <i class="lock"> </i>
+                            <li class="list1_right"><p>ضمانت کامل بودن صفحه ها</p></li>
+                            <div class="clearfix"></div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box3">
+                        <ul class="list1">
+                            <i class="clock1"> </i>
+                            <li class="list1_right"><p> دانلود محصول در همان لحظه</p></li>
+                            <div class="clearfix"> </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box4">
+                        <ul class="list1">
+                            <i class="vehicle"> </i>
+                            <li class="list1_right"><p>ارسال محصول به تمام کشور </p></li>
+                            <div class="clearfix"> </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="box5">
+                        <ul class="list1">
+                            <i class="dollar"> </i>
+                            <li class="list1_right"><p>پرداخت آنلاین وجه محصول</p></li>
+                            <div class="clearfix"> </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="column_center">
+                <h1 style="direction:rtl;"> نسخه کامل پروژه MVC امید سلیمان و سعید شام بیاتی</h1>
+                <h2>مرکز مقالات و پروژه و پایان نامه دانشجویی</h2>
+            </div>
+            <div class="sellers_grid">
+                <ul class="sellers">
+                    <i class="star"> </i>
+                    <li class="sellers_desc"><h2>برترین پایان نامه ها</h2></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+            @*************************************************************************************
+            Special Product 
+            ****************************************************@
+            <div class="grid_2">
+
+                @foreach (var item in ViewBag.spciallProduct)
+                {
+                    <div class="col-md-3 span_6">
+                        <div class="box_inner">
+                            <img style="width:253px;height:201px" src="@item.ProductPhotoUrl" class="img-responsive" alt="@item.ProductTitle" />
+                            <div class="sale-box"> </div>
+                            <div class="desc">
+                                <h3>@item.ProductTitle</h3>
+
+                                <h4>@item.ProductPrice</h4>
+                                <ul class="list2">
+                                    <li class="list2_left"><span class="m_1"><a href="#" class="link">افزودن به سبد خرید</a></span></li>
+                                    <li class="list2_right">
+                                        <span class="m_2"><a href="Home/Pinfo?id=@item.ProductId" class="link1">بیشتر</a></span>
+                                    </li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                                <div class="heart"> </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    @**************************************************************************************************
+    Last Product
+    **********************@
+    <div class="content_middle">
+        <div class="container">
+            <ul class="promote">
+                <li class="promote_head"><h3>اخرین پایان نامه ها</h3></li>
+                <i class="promote_icon"> </i>
+            </ul>
+            <ul id="flexiselDemo3">
+                @foreach (var item in ViewBag.Product)
+                {
+                    <li>
+                        <img style="height:228px;width:190px" src="@item.ProductPhotoUrl" class="img-responsive" /><div class="grid-flex">
+                            <h4>@item.ProductTitle</h4><p>@item.ProductPrice ریال</p>
+                            <div class="m_3"><a href="Home/Pinfo?id=@item.ProductId" class="link2">افزودن به سبد </a></div>
+                            <div class="ticket"> </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+            <script type="text/javascript">
+                $(window).load(function () {
+                    $("#flexiselDemo3").flexisel({
+                        visibleItems: 6,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 3000,
+                        pauseOnHover: true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint: 480,
+                                visibleItems: 1
+                            },
+                            landscape: {
+                                changePoint: 640,
+                                visibleItems: 2
+                            },
+                            tablet: {
+                                changePoint: 768,
+                                visibleItems: 3
+                            }
+                        }
+                    });
+
+                });
+            </script>
+            <script type="text/javascript" src="Content/js/jquery.flexisel.js"></script>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content_middle_bottom">
+            <div class="col-md-4">
+                <ul class="spinner">
+                    <i class="spinner_icon"> </i>
+                    <li class="spinner_head"><h3> نماد تجارت الکترونیکی</h3></li>
+                    <div class="clearfix"> </div>
+                </ul>
+                <div class="timer_box">
+                    <div class="thumb">
+
+                        <img src="~/Content/images/thumb1.png" />
+                    </div>
+
+                    <a href="#"><div style="text-align:right;font-size:37px;" class="m_3 deal"><div class="link1">برای اطمینان کلیک کنید</div></div></a>
+                </div>
+            </div>
+            @*****************************************************************
+            News Code
+            **************************@
+            <div class="col-md-8">
+                <ul class="spinner">
+                    <i class="paperclip"> </i>
+                    <li class="spinner_head"><h3>  اخرین اخبار</h3></li>
+                    <div class="clearfix"> </div>
+                </ul>
+                @foreach (var item in ViewBag.News)
+                {
+                    <div class="a-top">
+                        <div class="left-grid">
+                            <img src="@item.NewsPhotoUrl" class="img-responsive" alt="" />
+                        </div>
+                        <div class="right-grid">
+                            <h4><a href="#">@item.NewsTitle</a></h4>
+                            <p>
+                                @item.NewsDescription
+                            </p>
+                        </div>
+                        <div class="but">
+                            <a class="arrow" href="Home/NewsDescript?id=@item.NewsId"> </a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                }
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="content_bottom">
+            <div class="col-md-3 span_1">
+                <ul class="spinner">
+                    <i class="box_icon"> </i>
+                    <li class="spinner_head"><h3>دانشگاه آزاد کرج</h3></li>
+                    <div class="clearfix"> </div>
+                </ul>
+                <img src="Content/images/uni.jpg" class="img-responsive" alt="" />
+            </div>
+            @foreach (var item in ViewBag.About)
+            {
+                <div class="col-md-3 span_1">
+                    <ul class="spinner">
+                        <i class="bubble"> </i>
+                        <li class="spinner_head"><h3>@item.AboutTitle</h3></li>
+                        <div class="clearfix"> </div>
+                    </ul>
+                    <p>
+                        @item.AboutContent
+                    </p>
+                </div>
+            }
+            <div class="col-md-3 span_1">
+                <ul class="spinner">
+                    <i class="mail"> </i>
+                    <li class="spinner_head"><h3>شبکه های اجتماعی </h3></li>
+                    <div class="clearfix"> </div>
+                </ul>
+                <ul class="social">
+                    <li><a href=""> <i class="fb"> </i> </a></li>
+                    <li><a href=""><i class="tw"> </i> </a></li>
+                    <li><a href=""><i class="google"> </i> </a></li>
+                    <li><a href=""><i class="linkedin"> </i> </a></li>
+                    <li><a href=""><i class="skype"> </i> </a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 span_1">
+                <ul class="spinner">
+                    <i class="mail"> </i>
+                    <li class="spinner_head"><h3> ارتباط با ما</h3></li>
+                    <div class="clearfix"> </div>
+                </ul>
+                <p> کرج , گوهردشت خیابان سیزدهم ,دانشگاه آزاد کرج</p>
+                <p></p>
+                <p>شماره تماس : 12345678</p>
+                <p><a href="mailto:info@Karaj_university.ir"> info@Karaj_university.ir</a></p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <ul class="footer_nav">
+                <li><a href="#">تماس با ما</a></li>
+                <li><a href="#">درباره ما</a></li>
+                <li><a href="#">فروشگاه</a></li>
+                <li><a href="#">اخبار</a></li>
+                <li><a href="#">خانه</a></li>
+            </ul>
+
+            <p class="copy">طراحی و برنامه نویسی  <a href="http://omid_sg.ir" target="_blank"> امید سلیمان</a></p>
+        </div>
+    </div>
+    <!-- Goto Top by www.1abzar.com --->
+    <script type="text/javascript" src="http://1abzaar.ir/abzar/tools/top-page/jquery.min.js"></script>
+    <script>var abzar = "<img src=http://1abzaar.ir/abzar/tools/top-page/top2.png />";</script>
+    <script type="text/javascript" src="http://1abzaar.ir/abzar/tools/top-page/scrolltopcontrol.js"></script><div style="display:none"><h1><a href="http://www.1abzar.com">ابزار هدایت به بالای صفحه</a></h1></div>
+    <!-- Goto Top by www.1abzar.com --->
+
+</body>
+</html>

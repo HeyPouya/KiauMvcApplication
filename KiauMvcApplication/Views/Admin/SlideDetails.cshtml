@@ -1,0 +1,43 @@
+﻿@using System.Activities.Expressions
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SlideDetails</title>
+    <link href="~/Content/css/cms.css" rel="stylesheet" />
+</head>
+<body>
+    @TempData["MessageDeleteSlider"]
+
+    <div class="DetailsContainer">
+        <div class="DetailsMainTitle">
+            <h3>لیست اسلاید شو</h3>
+        </div>
+        @foreach (var item in ViewBag.sliderList)
+        {
+
+            <div class="part">
+                <div class="Dtitle">
+                    @item.SlideShowTitle
+                </div>
+                <div class="DContent">
+                    <img src="@item.SlideShowPhotoUrl" />
+                </div>
+                <div id="Delbutton" class="DButton">
+                    @Html.ActionLink("حذف", "DelSlide", new { id = @item.SlideShowId })
+                    |
+                    @Html.ActionLink("ویرایش", "EditSlide", new { id = @item.SlideShowId })
+                </div>
+            </div>
+        }
+        <div class="DetailsExit">
+            @Html.ActionLink("بازگشت به پنل مدیریت", "Panel")
+        </div>
+    </div>
+</body>
+</html>

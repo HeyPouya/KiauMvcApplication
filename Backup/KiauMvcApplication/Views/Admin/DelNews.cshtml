@@ -1,0 +1,59 @@
+﻿@model KiauMvcApplication.Models.NewsTb
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>حذف اعضا</title>
+    <link href="~/Content/css/cms.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>آیا اطمینان دارید؟</h3>
+    <fieldset>
+        <legend>حذف اخبار</legend>
+        <div class="display-label">
+            <span>موضوع خبر :</span>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NewsTitle)
+        </div>
+        <br />
+        <div class="display-label">
+            <span>توضیحات خبر :</span>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NewsDescription)
+        </div>
+        <br />
+        <div class="display-label">
+            <span>متن خبر</span>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NewsContent)
+        </div>
+        <br />
+        <div class="display-label">
+            <span>تاریخ خبر</span>
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NewsDate)
+        </div>
+        <br />
+        @ViewBag.Message
+        <br />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <p>
+                <input type="submit" value="حذف" /> |
+                @Html.ActionLink("بازگشت به پنل مدیریت", "Panel")
+            </p>
+        }
+    </fieldset>
+</body>
+</html>

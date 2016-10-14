@@ -1,0 +1,41 @@
+﻿@using System.Activities.Expressions
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>لیست گروه محصولی</title>
+    <link href="~/Content/css/cms.css" rel="stylesheet" />
+</head>
+<body>
+    @TempData["MessageDeleteSlider"]
+
+    <div class="DetailsContainer">
+        <div class="DetailsMainTitle">
+            <h3>لیست  گروه محصولی</h3>
+        </div>
+        @foreach (var item in ViewBag.ProductGroupList)
+        {
+
+            <div class="part">
+                <div class="Dtitle">
+                    @item.ProductGroupTitle
+                </div>
+
+                <div id="Delbutton" class="DButton">
+                    @Html.ActionLink("حذف", "DelProductGroup", new { id = @item.ProductGroupId })
+                    |
+                    @Html.ActionLink("ویرایش", "EditProductGroup", new { id = @item.ProductGroupId })
+                </div>
+            </div>
+        }
+        <div class="DetailsExit">
+            @Html.ActionLink("بازگشت به پنل مدیریت", "Panel")
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿@using System.Web.UI.WebControls
+@model KiauMvcApplication.Models.NewsTb
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>مدیریت اخبار</title>
+    <link href="~/Content/css/cms.css" rel="stylesheet" />
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    @using (Html.BeginForm("News", "admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div class="sendbox">
+            <h3>اخبار</h3>
+            <p class="lbl">کاربر محترم عکس باید در سایز px 283*284 باشد</p>
+            <div class="editor-label">
+                <span>موضوع:</span>
+            </div>
+            <br />
+            <div class="editor-field">
+                @Html.TextBoxFor(x => x.NewsTitle)
+                @Html.ValidationMessageFor(model => model.NewsTitle)
+            </div>
+            <br />
+            <div class="editor-label">
+                <span>توضیحات خبر :</span>
+            </div>
+            <br />
+            <div class="editor-field">
+                @Html.TextBoxFor(x => x.NewsDescription)
+                @Html.ValidationMessageFor(model => model.NewsDescription)
+            </div>
+            <br />
+            <div class="editor-label">
+                <span>عکس خبر:</span>
+            </div>
+            <br />
+            <div class="editor-field">
+                <input class="fileupload" type="file" name="teamMember" value=" " />
+                @Html.ValidationMessageFor(model => model.NewsPhotoUrl)
+            </div>
+            <br />
+            <div class="editor-label">
+                <span> متن خبر:</span>
+            </div>
+            <br />
+            <div class="editor-field">
+                @Html.TextBoxFor(x => x.NewsContent)
+                @Html.ValidationMessageFor(model => model.NewsContent)
+            </div>
+            <br />
+            <p>
+                <input class="sendsubmit" type="submit" value="افزودن" />
+            </p>
+            <br />
+            <br />
+            @ViewBag.Message
+            <br />
+            <div class="panelButton">
+                @Html.ActionLink("بازگشت به پنل مدیریت", "Panel")
+            </div>
+        </div>
+    }
+
+</body>
+</html>

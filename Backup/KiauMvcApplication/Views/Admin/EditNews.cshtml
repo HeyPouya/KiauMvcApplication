@@ -1,0 +1,73 @@
+﻿@model KiauMvcApplication.Models.NewsTb
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ویرایش اعضای تیم</title>
+    <link href="~/Content/css/cms.css" rel="stylesheet" />
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    @using (Html.BeginForm("EditNews", "admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div class="sendbox">
+            <h3>ویرایش اعضای تیم</h3>
+            <p class="lbl">کاربر محترم عکس باید در سایز px 283*284 باشد</p>
+            <div class="editor-label">
+                <span>موضوع:</span>
+            </div>
+            <br />
+            <div class="editor-field">
+                @Html.EditorFor(model => model.NewsTitle)
+                @Html.ValidationMessageFor(model => model.NewsTitle)
+            </div>
+            <br />
+            <div class="editor-label">
+                <span>توضیحات خبر :</span>
+            </div>
+            <br />
+            <div class="editor-field">
+                @Html.EditorFor(model => model.NewsDescription)
+                @Html.ValidationMessageFor(model => model.NewsDescription)
+            </div>
+            <br />
+            <div class="editor-label">
+                <span>عکس خبر:</span>
+            </div>
+            <br />
+            <div class="editor-field">
+                <input class="fileupload" type="file" name="teamEdit" value=" " />
+                @Html.ValidationMessageFor(model => model.NewsPhotoUrl)
+            </div>
+            <br />
+            <div class="editor-label">
+                <span> متن خبر :</span>
+            </div>
+            <br />
+            <div class="editor-field">
+                @Html.EditorFor(model => model.NewsContent)
+                @Html.ValidationMessageFor(model => model.NewsContent)
+            </div>
+            <br />
+            @ViewBag.Message
+            <p>
+                <input class="sendsubmit" type="submit" value="ویرایش" />
+            </p>
+            <div class="panelButton">
+                @Html.ActionLink("بازگشت به پنل مدیریت", "Panel")
+            </div>
+        </div>
+    }
+</body>
+</html>

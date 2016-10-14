@@ -1,0 +1,47 @@
+﻿@model KiauMvcApplication.Models.SlideShowTb
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>حذف اسلایدر</title>
+    <link href="~/Content/css/cms.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>آیا اطمینان دارید؟</h3>
+    <fieldset>
+        <legend>جزییات اسلاید شو</legend>
+
+        <div class="display-label">
+            <span>تیتر اسلاید شو :</span>
+        </div>
+        <br />
+        <div class="display-field">
+            @Html.DisplayFor(model => model.SlideShowTitle)
+        </div>
+        <br />
+        <div class="display-label">
+            <span> :عکس اسلاید شو</span>
+        </div>
+        <br />
+        <div class="display-field">
+            <img style="height: 250px;width: 250px;" src="@Model.SlideShowPhotoUrl" alt="Alternate Text" />
+        </div>
+        <br />
+        @ViewBag.Message
+        <br />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <p>
+                <input type="submit" value="حذف" /> |
+                @Html.ActionLink("بازگشت به پنل مدیریت", "Panel")
+            </p>
+        }
+    </fieldset>
+</body>
+</html>

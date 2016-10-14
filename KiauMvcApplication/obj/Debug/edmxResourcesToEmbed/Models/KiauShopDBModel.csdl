@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KiauShopDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AboutTb">
+    <Key>
+      <PropertyRef Name="AboutId" />
+    </Key>
+    <Property Name="AboutId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AboutTitle" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="AboutPhotoUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AboutContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NewsTb">
+    <Key>
+      <PropertyRef Name="NewsId" />
+    </Key>
+    <Property Name="NewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewsTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NewsDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NewsContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NewsPhotoUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NewsDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ProductGroupTb">
+    <Key>
+      <PropertyRef Name="ProductGroupId" />
+    </Key>
+    <Property Name="ProductGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductGroupTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserTb">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserStatus" Type="Boolean" />
+    <Property Name="UserPassword" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="KiauShopDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AboutTb" EntityType="Self.AboutTb" />
+    <EntitySet Name="NewsTb" EntityType="Self.NewsTb" />
+    <EntitySet Name="ProductGroupTb" EntityType="Self.ProductGroupTb" />
+    <EntitySet Name="UserTb" EntityType="Self.UserTb" />
+    <EntitySet Name="SlideShowTb" EntityType="KiauShopDBModel.SlideShowTb" />
+    <EntitySet Name="ContactUsTb" EntityType="KiauShopDBModel.ContactUsTb" />
+    <EntitySet Name="NewslettersTb" EntityType="KiauShopDBModel.NewslettersTb" />
+    <EntitySet Name="ProductTb" EntityType="KiauShopDBModel.ProductTb" />
+  </EntityContainer>
+  <EntityType Name="SlideShowTb">
+    <Key>
+      <PropertyRef Name="SlideShowId" />
+    </Key>
+    <Property Name="SlideShowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SlideShowTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SlideShowPhotoUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ContactUsTb">
+    <Key>
+      <PropertyRef Name="CuId" />
+    </Key>
+    <Property Name="CuId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CuFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CuEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CuCelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CuContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NewslettersTb">
+    <Key>
+      <PropertyRef Name="NewslettersId" />
+    </Key>
+    <Property Name="NewslettersId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewslettersEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProductTb">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductGroupIdFK" Type="Int32" />
+    <Property Name="ProductTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ProductContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductPhotoUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProfessorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductFreeFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductStatus" Type="Boolean" />
+    <Property Name="ProductIsSpeciall" Type="Boolean" />
+  </EntityType>
+</Schema>

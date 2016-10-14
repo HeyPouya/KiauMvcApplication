@@ -1,0 +1,137 @@
+﻿.grid 
+{ 
+	width:98%; 
+	margin:5px;
+	
+}
+.grid H2 
+{ 
+	margin:0; padding:0; 
+	color:#ffffff;
+	height:30px;
+	line-height:20px;
+	font-size:8pt;
+}
+.grid .mid
+{
+	padding:3px 0px 0px 0px;
+}
+.grid .datatable
+{
+	width:100%;
+	color:#666;
+}        
+.grid .datatable TH
+{
+	background-image:url('../image/Header3.gif'); 
+	background-repeat:repeat-x;
+    font-family:'B koodak', Tahoma;
+	font-size:11pt;
+    font-weight:bold;
+    letter-spacing:0px;
+    padding:2px 4px;
+    /*color:#0066cc;*/
+    border-bottom:solid 1px #f7f7f7;
+    height:35px;
+    background-color:#cecece;
+}
+.grid .datatable TH A
+{ 
+	text-decoration:none;
+	padding-right:18px; 
+	color:#0066cc;
+}
+.grid .datatable .row TD
+{
+    font-family:Tahoma;
+	font-size:8pt;
+	font-weight:normal;
+	color:Black;
+    /*text-align:right;*/
+    padding:5px 4px;
+    border-bottom:solid 1px #dad9d9;
+    background-image:url(../images/bck_white_50.png);
+}
+
+.grid .datatable .row TD A
+{
+    text-decoration:none;
+    color:#0072e3;
+}  
+  
+.grid .datatable .row:hover
+{  background-image:url(../images/bck_white_75.png);
+	/*background-color:#fffacd;*/
+	color:#000;
+	
+	
+}
+
+.grid .datatable .row TD.first { padding-left:10px; } 
+.grid .datatable TH.first { padding-left:10px; }
+.grid .datatable .row:hover .first
+{
+    background-repeat:no-repeat;   
+	background-image:url(../Images/bullet.gif);
+}  
+/* Data Pager Styles */
+.grid TR.pager-row TD{
+    padding:10px 0px 10px 0px;
+    border-top:solid 0px #bbd9ee;
+}
+.grid .pager
+{
+    font-family:'B koodak', Tahoma;
+	font-size:12pt;
+    text-align:right;
+    padding:6px;	
+    
+  
+} 
+.grid .pager SPAN.command,        
+.grid .pager SPAN.current,        
+.grid .pager A.command,
+.grid TR.pager-row TD A
+{
+    color:#07779c;
+    padding:5px 8px 5px 8px;
+    text-decoration:none;
+    font-size:10pt;
+    border:none;
+    background-color:#d0cece;
+}
+.grid .pager A.command:hover,
+.grid TR.pager-row TD A:hover
+{
+    
+    border:solid 0px #408BB6;
+    background-color:transparent;
+    color:#5a90ce;
+    font-size:10pt;
+    padding:5px 8px 5px 8px;
+    text-decoration:none;
+}        
+.grid .pager SPAN.current,
+.grid TR.pager-row TD SPAN
+{
+    
+    display:inline;
+    background:#343434;
+	border:none;
+    font-weight:bold;
+    font-size:10pt;
+    color:#ffffff;
+    padding:5px 8px 5px 8px;
+}
+.grid TR.pager-row TD
+{
+    
+	border-top:none;
+	text-align:center;
+}
+.grid TR.pager-row TABLE
+{
+	height:30px;
+	margin:0 auto 0 auto;
+	
+}

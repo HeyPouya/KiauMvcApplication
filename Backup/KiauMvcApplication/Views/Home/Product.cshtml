@@ -1,0 +1,191 @@
+﻿@*@model PagedList.IPagedList<KiauMvcApplication.Models.ProductTb>*@
+@model IEnumerable<KiauMvcApplication.Models.ProductTb>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>محصولات</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/Content/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="../../Content/css/style.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="../../Content/css/jquery.countdown.css" />
+    <!-- Custom Theme files -->
+    <!--webfont-->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="../../Content/js/jquery-1.11.1.min.js"></script>
+    <!-- dropdown -->
+    <script src="../../Content/js/jquery.easydropdown.js"></script>
+    <!-- start menu -->
+    <link href="../../Content/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../../Content/js/megamenu.js"></script>
+    <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
+    <script src="../../Content/js/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider").responsiveSlides({
+                auto: true,
+                nav: false,
+                speed: 500,
+                namespace: "callbacks",
+                pager: true,
+            });
+        });
+    </script>
+    <script src="../../Content/js/jquery.countdown.js"></script>
+    <script src="../../Content/js/script.js"></script>
+</head>
+<body>
+    <div class="header_top">
+        <div class="container">
+            <div class="header_top-box">
+                <div class="cssmenu">
+                    <ul>
+                        <li class="active"><a href="#">خوش آمدید</a></li>
+                        <li><a href="#">سبد خرید</a></li>
+                        <li><a href="Login">ورود</a></li>
+                        <li><a href="Register">ثبت نام</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="header_bottom">
+        <div class="container">
+            <div class="header_bottom-box">
+                <div class="header_bottom_left">
+                    <div class="logo">
+                        <a href="index.html"><img src="~/Content/images/logo3.png" alt="" /></a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                @using (Html.BeginForm("search", "Home"))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    <div class="header_bottom_right">
+                        <div class="search">
+                            <input type="text" id="search" name="search" placeholder="نام محصول را وارد نمایید">
+                            <button type="submit" id="search"></button>
+                        </div>
+                        <ul class="bag">
+                            <a href="#"><i class="bag_left"> </i></a>
+                            <a href="#"><li style="text-align:center" class="bag_right"><p>(0)</p> </li></a>
+                            <div class="clearfix"> </div>
+                        </ul>
+                    </div>
+                }
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+            <div class="menu_box">
+                <ul class="megamenu skyblue">
+                    <li class="active grid">
+                        @Html.ActionLink("خانه", "Index", new { @class = "color2" })
+                        @*<a class="color2" href="Index">خانه</a>*@
+                    </li>
+                    <li><a class="color4" href="News">اخبار</a></li>
+                    <li>
+                        <a class="color10" href="Product">پایان نامه </a>
+
+                    </li>
+                    <li><a class="color3" href="About">درباره ما</a></li>
+
+                    <li><a class="color8" href="Contact">تماس با ما</a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="content_top">
+        <div class="container">
+            <div class="sellers_grid">
+                <ul class="sellers">
+                    <i class="star"> </i>
+                    <li class="sellers_desc"><h2>لیست پایان نامه ها</h2></li>
+                    <div class="clearfix"> </div>
+                </ul>
+            </div>
+            <div class="grid_2">
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-3 span_6">
+                        <div style="margin-top:30px" class="box_inner">
+                            <img style="height:201px;width:253px" src="../@item.ProductPhotoUrl" class="img-responsive" alt="@item.ProductTitle" />
+                            <div class="sale-box"> </div>
+                            <div class="desc">
+                                <h3>@item.ProductTitle</h3>
+                                <h4>@item.ProductPrice ریال</h4>
+                                <ul class="list2">
+                                    <li class="list2_left"><span class="m_1"><a href="Pinfo?id=@item.ProductId" class="link">افزودن به سبد خرید</a></span></li>
+                                    <li class="list2_right"><span class="m_2"><a href="Pinfo?id=@item.ProductId" class="link1">بیشتر</a></span></li>
+                                    <div class="clearfix"> </div>
+                                </ul>
+                                <div class="heart"> </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="pager" style="float:right;margin-right:5px; height:25px;">
+            <ul></ul>
+        </div>
+    </div>   
+
+
+    <script>
+        var value = @ViewBag.count;
+        var length = value / 10;
+        var check = parseInt(length);
+        check = length - check;
+        if (check != 0) {
+            length++;
+        }
+        var element = $(".pager ul");
+        var result = "";
+
+        for (var i = 1; i <= length; i++) {
+            if (i > 10 && i < length - 1) {
+                continue;
+            }
+            result += "<li> <a href=\"http://localhost:9078/Home/Product/" + i + "\">" + i + "</a></li>";
+        }
+
+        $(element).append(result);
+    </script>
+
+    <div class="footer">
+        <div class="container">
+            <ul class="footer_nav">
+                <li><a href="#">تماس با ما</a></li>
+                <li><a href="#">درباره ما</a></li>
+                <li><a href="#">فروشگاه</a></li>
+                <li><a href="#">اخبار</a></li>
+                <li><a href="#">خانه</a></li>
+            </ul>
+            <p class="copy">طراحی و برنامه نویسی  <a href="http://omid_sg.ir" target="_blank"> امید سلیمان</a></p>
+        </div>
+    </div>
+</body>
+</html>

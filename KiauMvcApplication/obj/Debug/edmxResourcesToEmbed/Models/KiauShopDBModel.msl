@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KiauShopDBModelStoreContainer" CdmEntityContainer="KiauShopDBEntities">
+    <EntitySetMapping Name="AboutTb">
+      <EntityTypeMapping TypeName="KiauShopDBModel.AboutTb">
+        <MappingFragment StoreEntitySet="AboutTb">
+          <ScalarProperty Name="AboutId" ColumnName="AboutId" />
+          <ScalarProperty Name="AboutTitle" ColumnName="AboutTitle" />
+          <ScalarProperty Name="AboutPhotoUrl" ColumnName="AboutPhotoUrl" />
+          <ScalarProperty Name="AboutContent" ColumnName="AboutContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsTb">
+      <EntityTypeMapping TypeName="KiauShopDBModel.NewsTb">
+        <MappingFragment StoreEntitySet="NewsTb">
+          <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+          <ScalarProperty Name="NewsTitle" ColumnName="NewsTitle" />
+          <ScalarProperty Name="NewsDescription" ColumnName="NewsDescription" />
+          <ScalarProperty Name="NewsContent" ColumnName="NewsContent" />
+          <ScalarProperty Name="NewsPhotoUrl" ColumnName="NewsPhotoUrl" />
+          <ScalarProperty Name="NewsDate" ColumnName="NewsDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductGroupTb">
+      <EntityTypeMapping TypeName="KiauShopDBModel.ProductGroupTb">
+        <MappingFragment StoreEntitySet="ProductGroupTb">
+          <ScalarProperty Name="ProductGroupId" ColumnName="ProductGroupId" />
+          <ScalarProperty Name="ProductGroupTitle" ColumnName="ProductGroupTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTb">
+      <EntityTypeMapping TypeName="KiauShopDBModel.UserTb">
+        <MappingFragment StoreEntitySet="UserTb">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+          <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+          <ScalarProperty Name="UserStatus" ColumnName="UserStatus" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SlideShowTb">
+      <EntityTypeMapping TypeName="KiauShopDBModel.SlideShowTb">
+        <MappingFragment StoreEntitySet="SlideShowTb">
+          <ScalarProperty Name="SlideShowPhotoUrl" ColumnName="SlideShowPhotoUrl" />
+          <ScalarProperty Name="SlideShowTitle" ColumnName="SlideShowTitle" />
+          <ScalarProperty Name="SlideShowId" ColumnName="SlideShowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactUsTb">
+      <EntityTypeMapping TypeName="KiauShopDBModel.ContactUsTb">
+        <MappingFragment StoreEntitySet="ContactUsTb">
+          <ScalarProperty Name="CuContent" ColumnName="CuContent" />
+          <ScalarProperty Name="CuCelephone" ColumnName="CuCelephone" />
+          <ScalarProperty Name="CuEmail" ColumnName="CuEmail" />
+          <ScalarProperty Name="CuFullName" ColumnName="CuFullName" />
+          <ScalarProperty Name="CuId" ColumnName="CuId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewslettersTb">
+      <EntityTypeMapping TypeName="KiauShopDBModel.NewslettersTb">
+        <MappingFragment StoreEntitySet="NewslettersTb">
+          <ScalarProperty Name="NewslettersEmail" ColumnName="NewslettersEmail" />
+          <ScalarProperty Name="NewslettersId" ColumnName="NewslettersId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductTb">
+      <EntityTypeMapping TypeName="KiauShopDBModel.ProductTb">
+        <MappingFragment StoreEntitySet="ProductTb">
+          <ScalarProperty Name="ProductIsSpeciall" ColumnName="ProductIsSpeciall" />
+          <ScalarProperty Name="ProductStatus" ColumnName="ProductStatus" />
+          <ScalarProperty Name="ProductFreeFile" ColumnName="ProductFreeFile" />
+          <ScalarProperty Name="ProductFile" ColumnName="ProductFile" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="ProfessorName" ColumnName="ProfessorName" />
+          <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+          <ScalarProperty Name="ProductPhotoUrl" ColumnName="ProductPhotoUrl" />
+          <ScalarProperty Name="ProductContent" ColumnName="ProductContent" />
+          <ScalarProperty Name="ProductTitle" ColumnName="ProductTitle" />
+          <ScalarProperty Name="ProductGroupIdFK" ColumnName="ProductGroupIdFK" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
